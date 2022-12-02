@@ -692,7 +692,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center|center_horizontal"
-                            android:text="换张壁纸"
+                            android:text="更换壁纸"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -774,7 +774,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="播放器"
+                            android:text="内置播放"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -817,7 +817,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="IJK解码方式"
+                            android:text="解码方式"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -869,7 +869,7 @@
                     <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="嗅探Webview"
+                            android:text="嗅探方式"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -1010,7 +1010,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="搜索附近TVBox"
+                            android:text="搜索附近"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/ts_24" />
 
@@ -1066,7 +1066,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="数据备份还原"
+                    android:text="备份还原"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/ts_24" />
 
@@ -1155,7 +1155,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="关于"
+                        android:text="软件说明"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24" />
 
@@ -1190,7 +1190,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="版本"
+                        android:text="版本更新"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/ts_24" />
 
