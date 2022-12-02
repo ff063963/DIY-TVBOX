@@ -54,8 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tag="tv_top_container"
-        android:visibility="gone"
-        tools:visibility="visible"
+
         android:layout_gravity="right"
         android:layout_marginRight="@dimen/vs_60"
         android:paddingTop="@dimen/vs_10"  
@@ -596,7 +595,7 @@
                         android:maxLines="1"
                         android:singleLine="false"
                         android:textColor="@android:color/white"
-                        android:textSize="@dimen/ts_30" />
+                        android:textSize="@dimen/ts_24" />
 <!---
             <TextView
                 android:id="@+id/tv_info_name"
