@@ -267,9 +267,9 @@ public class PlayerHelper {
 
     public static String getRenderName(int renderType) {
         if (renderType == 1) {
-            return "SurfaceView";
+            return "Surface";
         } else {
-            return "TextureView";
+            return "Texture";
         }
     }
 //外部播放器
