@@ -33,13 +33,8 @@ mv $CURRENT_DIR/DIY/设置/dialog_version.xml $CURRENT_DIR/$DIR/app/src/main/res
 sed -i 's/6666/部分UI修改，播放器默认修改为EXO播放,增加外置播放器方式/g'   $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_version.xml
 
 #播放界面修改
-
-#cp $CURRENT_DIR/DIY/misc.xml  $CURRENT_DIR/$DIR/.idea/misc.xml
 cp $CURRENT_DIR/DIY/播放/player_vod_control_view.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
 cp $CURRENT_DIR/DIY/播放/VodController.java $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
-#cp $CURRENT_DIR/DIY/player_live_control_view.xml  $CURRENT_DIR/$DIR/app/src/main/res/layout/player_live_control_view.xml
-#cp $CURRENT_DIR/DIY/icon_vodcontroller_unlock.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/icon_vodcontroller_unlock.xml
-
 
 mv $CURRENT_DIR/DIY/播放/shape_dialog_top_bg.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_dialog_top_bg.xml
 mv $CURRENT_DIR/DIY/播放/play_mobile_center_shape.xml  $CURRENT_DIR/$DIR/app/src/main/res/drawable/play_mobile_center_shape.xml
@@ -68,12 +63,15 @@ sed -i 's/vs_30/vs_15/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/dialog_select
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/item_home_sort.xml
 sed -i 's/color_BBFFFFFF/color_FFFFFF/g' $CURRENT_DIR/$DIR/app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
 
+#进度条颜色
+sed -i 's/color_353744/color_1890FF/g' $CURRENT_DIR/$DIR/app/src/main/res/drawable/shape_player_control_vod_seek.xml
+
 #名称修改
 sed -i 's/TVBox/影视Box/g' $CURRENT_DIR/$DIR/app/src/main/res/values/strings.xml
 
 #版本号
 sed -i 's/1.0.0/1.4.0/g' $CURRENT_DIR/$DIR/app/build.gradle
-
+sed -i 's/1.0.0/1.4.0/g' $CURRENT_DIR/$DIR/app/src/main/res/layout/fragment_model.xml
 #共存
 sed -i 's/com.github.tvbox.osc/com.tvbox.q/g' $CURRENT_DIR/$DIR/app/build.gradle
 
