@@ -52,12 +52,9 @@
     
     <LinearLayout
 
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/vs_10"           
-        android:layout_gravity="bottom|end"
-        android:paddingLeft="@dimen/vs_10"
-        android:paddingEnd="@dimen/vs_10"          
+        android:layout_gravity="bottom|right"      
         android:layout_marginEnd="@dimen/vs_10"
         android:layout_marginRight="@dimen/vs_10"    
         android:orientation="vertical">
