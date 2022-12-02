@@ -259,7 +259,7 @@ public class VodController extends BaseController {
     finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
     mTopRoot = findViewById(R.id.top_container);
-   // m3rdPlayerBtn = findViewById(R.id.play_3rdplayer);   
+    m3rdPlayerBtn = findViewById(R.id.play_3rdplayer);   
      //btnHint = findViewById(R.id.play_btn_hint);   
         
  //tvBack = findViewById(R.id.tv_back);
@@ -456,6 +456,8 @@ public class VodController extends BaseController {
             }
         });   
    
+         
+         
         mPlayerBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -704,6 +706,23 @@ public class VodController extends BaseController {
                 mLandscapePortraitBtn.setVisibility(View.VISIBLE);
                 mLandscapePortraitBtn.setText("竖屏");
             }
+        }
+    }
+     
+     
+     
+     //外置播放器
+      public void init3rdPlayerButton() {
+        PlayerHelper.reload3rdPlayers();
+        Integer[] types = PlayerHelper.getAvailable3rdPlayerTypes();
+        if(types.length <= 0) {
+            m3rdPlayerBtn.setVisibility(View.GONE);
+        } else {
+            m3rdPlayerBtn.setVisibility(View.VISIBLE);
+            Integer selectedType = Hawk.get(HawkConfig.THIRD_PARTY_PLAYER, types[0]);
+            if(Arrays.binarySearch(types, selectedType) < 0)
+                Hawk.put(HawkConfig.THIRD_PARTY_PLAYER, types[0]);
+            m3rdPlayerBtn.setText(PlayerHelper.get3rdPlayerName(selectedType));
         }
     }
      /*
