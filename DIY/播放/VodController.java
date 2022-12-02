@@ -491,49 +491,6 @@ public class VodController extends BaseController {
             }
         });
 
-        m3rdPlayerBtn.setOnLongClickListener(new OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                myHandle.removeCallbacks(myRunnable);
-                myHandle.postDelayed(myRunnable, myHandleSeconds);
-                FastClickCheckUtil.check(view);
-                try {
-                    int playerType = mPlayerConfig.getInt("pl");
-                    int defaultPos = 0;
-                    ArrayList<Integer> players = PlayerHelper.getExistPlayerTypes();
-                    ArrayList<Integer> renders = new ArrayList<>();
-                    for(int p = 0; p<players.size(); p++) {
-                        renders.add(p);
-                        if (players.get(p) == playerType) {
-                            defaultPos = p;
-                        }
-                    }
-                    SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
-                    dialog.setTip("请选择播放器");
-                     dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<Integer>() {
-                    @Override
-                    public void click(Integer value, int pos) {
-                        Hawk.put(HawkConfig.THIRD_PARTY_PLAYER, value);
-                        thirdPartyPlayer.setText(get3rdPlayerName(value));
-                     }
-                @Override
-                    public String getDisplay(Integer val) {
-                        return get3rdPlayerName(val);
-                    }
-                }, new DiffUtil.ItemCallback<Integer>() {
-                    @Override
-                    public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
-                        return oldItem.intValue() == newItem.intValue();
-                    }
-
-                    @Override
-                    public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
-                        return oldItem.intValue() == newItem.intValue();
-                    }
-                }, Arrays.asList(types), defaultPos);
-                dialog.show();
-            }
-        });
          
          
                  mPlayerBtn.setOnClickListener(new OnClickListener() {
@@ -1152,6 +1109,24 @@ public class VodController extends BaseController {
         return true;
     }
 
+     
+     void showBtnHint(View focusedView) {
+        long postDelay = 300;
+        if(btnHint.getVisibility() == VISIBLE) {
+            btnHint.clearAnimation();
+            btnHint.animate().alpha(0).setDuration(300).start();
+        }
+        if(focusedView == mPlayPause) {
+            doShowHint(mNextBtn, "下一集", postDelay);
+        }  else if(focusedView == m3rdPlayerBtn) {
+            doShowHint(m3rdPlayerBtn, "第三方播放器", postDelay);
+        } else {
+            mHandler.post(hideBtnHintRunnable);
+        }
+    }
+     
+     
+     
      
     @Override
     public boolean onBackPressed() {
