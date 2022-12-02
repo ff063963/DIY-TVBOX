@@ -767,7 +767,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
 
             }
         });
-    }
 
     //ijk缓存
         findViewById(R.id.llClearIjkCache).setOnClickListener((view -> onClickClearIjkCache()));
