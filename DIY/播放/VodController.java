@@ -444,7 +444,7 @@ public class VodController extends BaseController {
    
   
   //外置播放器
-         /*
+  
           m3rdPlayerBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -455,7 +455,7 @@ public class VodController extends BaseController {
                 }
             }
         });   
-        */
+   
         mPlayerBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
