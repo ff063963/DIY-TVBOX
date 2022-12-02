@@ -706,14 +706,7 @@ public class VodController extends BaseController {
      
      
    
-  tvBack.setOnClickListener(new OnClickListener() {
-         if(Hawk.get(HawkConfig.TV_TYPE, 0) == 0) {
-            tvBack.setVisibility(GONE);
-        } else {
-           }
-            });
- 
-    */    
+
     void setLandscapePortrait() {
         int requestedOrientation = mActivity.getRequestedOrientation();
         if (requestedOrientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE || requestedOrientation == ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE || requestedOrientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_LANDSCAPE) {
