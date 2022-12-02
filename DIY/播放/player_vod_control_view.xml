@@ -55,8 +55,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"          
         android:layout_marginEnd="@dimen/vs_10"
-        android:layout_marginRight="@dimen/vs_10"               
-   
+        android:layout_marginLeft="@dimen/vs_10"               
         android:paddingBottom="@dimen/vs_20"          
         android:orientation="horizontal">
         
