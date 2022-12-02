@@ -510,50 +510,30 @@ public class VodController extends BaseController {
                     }
                     SelectDialog<Integer> dialog = new SelectDialog<>(mActivity);
                     dialog.setTip("请选择播放器");
-                    dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<Integer>() {
-                        @Override
-                        public void click(Integer value, int pos) {
-                            try {
-                                dialog.cancel();
-                                int thisPlayType = players.get(pos);
-                                if (thisPlayType != playerType) {
-                                    mPlayerConfig.put("pl", thisPlayType);
-                                    updatePlayerCfgView();
-                                    listener.updatePlayerCfg();
-                                    listener.replay(false);
-//                                    hideBottom();
-                                }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            m3rdPlayerBtn.requestFocus();
-                            m3rdPlayerBtn.requestFocusFromTouch();
-                        }
+                     dialog.setAdapter(new SelectDialogAdapter.SelectDialogInterface<Integer>() {
+                    @Override
+                    public void click(Integer value, int pos) {
+                        Hawk.put(HawkConfig.THIRD_PARTY_PLAYER, value);
+                        thirdPartyPlayer.setText(get3rdPlayerName(value));
+                     }
+                @Override
+                    public String getDisplay(Integer val) {
+                        return get3rdPlayerName(val);
+                    }
+                }, new DiffUtil.ItemCallback<Integer>() {
+                    @Override
+                    public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
+                        return oldItem.intValue() == newItem.intValue();
+                    }
 
-                        @Override
-                        public String getDisplay(Integer val) {
-                            Integer playerType = players.get(val);
-                            return PlayerHelper.getPlayerName(playerType);
-                        }
-                    }, new DiffUtil.ItemCallback<Integer>() {
-                        @Override
-                        public boolean areItemsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
-                            return oldItem.intValue() == newItem.intValue();
-                        }
-
-                        @Override
-                        public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
-                            return oldItem.intValue() == newItem.intValue();
-                        }
-                    }, renders, defaultPos);
-                    dialog.show();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                return true;
+                    @Override
+                    public boolean areContentsTheSame(@NonNull @NotNull Integer oldItem, @NonNull @NotNull Integer newItem) {
+                        return oldItem.intValue() == newItem.intValue();
+                    }
+                }, Arrays.asList(types), defaultPos);
+                dialog.show();
             }
         });
-         
          
          
                  mPlayerBtn.setOnClickListener(new OnClickListener() {
