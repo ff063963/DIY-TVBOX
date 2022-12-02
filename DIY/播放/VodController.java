@@ -154,7 +154,8 @@ public class VodController extends BaseController {
     ImageView tvBack;
     LinearLayout mTopRoot;
     TextView m3rdPlayerBtn;
-    
+    TextView mPlayerSj;
+          
     public TextView mPlayerTimeStartEndText;
     public TextView mPlayerTimeStartBtn;
     public TextView mPlayerTimeSkipBtn;
@@ -241,6 +242,7 @@ public class VodController extends BaseController {
         mPreBtn = findViewById(R.id.play_pre);
         mPlayerScaleBtn = findViewById(R.id.play_scale);
         mPlayerSpeedBtn = findViewById(R.id.play_speed);
+         
         mPlayerBtn = findViewById(R.id.play_player);
         mPlayerIJKBtn = findViewById(R.id.play_ijk);
         mPlayerTimeStartEndText = findViewById(R.id.play_time_start_end_text);
@@ -259,7 +261,7 @@ public class VodController extends BaseController {
     finishAt = findViewById(R.id.tv_finish_at);
     mPlayerFFwd = findViewById(R.id.play_ff);
     mTopRoot = findViewById(R.id.top_container);
-   
+    mPlayerSj = findViewById(R.id.tv_info_sj);
      //btnHint = findViewById(R.id.play_btn_hint);   
         
  //tvBack = findViewById(R.id.tv_back);
