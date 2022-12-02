@@ -1079,21 +1079,7 @@ public class VodController extends BaseController {
     }
 
      
-     void showBtnHint(View focusedView) {
-        long postDelay = 300;
-        if(btnHint.getVisibility() == VISIBLE) {
-            btnHint.clearAnimation();
-            btnHint.animate().alpha(0).setDuration(300).start();
-        }
-        if(focusedView == mPlayPause) {
-            doShowHint(mNextBtn, "下一集", postDelay);
-        }  else if(focusedView == m3rdPlayerBtn) {
-            doShowHint(m3rdPlayerBtn, "第三方播放器", postDelay);
-        } else {
-            mHandler.post(hideBtnHintRunnable);
-        }
-    }
-     
+
      
      
      
