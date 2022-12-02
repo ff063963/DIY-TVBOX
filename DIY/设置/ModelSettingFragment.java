@@ -64,6 +64,8 @@ import me.jessyan.autosize.utils.AutoSizeUtils;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import android.view.ViewGroup;
 
+import com.github.tvbox.osc.util.FileUtils;
+import com.github.tvbox.osc.util.LOG;
 
 import java.util.Arrays;
 /**
@@ -767,6 +769,29 @@ public class ModelSettingFragment extends BaseLazyFragment {
         });
     }
 
+    //ijk缓存
+        findViewById(R.id.llClearIjkCache).setOnClickListener((view -> onClickClearIjkCache()));
+    }
+
+    private void onClickClearIjkCache() {
+        String cachePath = FileUtils.getExternalCachePath() + "/ijkcaches/";
+        File cacheDir = new File(cachePath);
+        if (!cacheDir.exists()) return;
+        File[] files = cacheDir.listFiles();
+        if (files != null && files.length > 0) {
+            try {
+                for(File one : files) {
+                    LOG.i("ijkplayer cache:" + one.getAbsolutePath());
+                    one.delete();
+                }
+                Toast.makeText(getContext(), "ijk缓存已清空", Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(getContext(), "暂无ijk缓存", Toast.LENGTH_LONG).show();
+        }
+    }
  
     public static SearchRemoteTvDialog loadingSearchRemoteTvDialog;
     public static List<String> remoteTvHostList;
@@ -779,7 +804,6 @@ public class ModelSettingFragment extends BaseLazyFragment {
     }
 
 
-    
     String getHomeRecName(int type) {
         if (type == 1) {
             return "推荐";
